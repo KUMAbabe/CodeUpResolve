@@ -1,0 +1,322 @@
+//C언어기 때문에 시작은 무조건 이걸로
+/*
+#include <stdio.h>
+int main()
+{
+
+}
+*/
+
+/*
+int : 정수형
+float : 유리수형
+double : 엥간한 건 다 되지만 낭비
+
+//////////////////////////////////////////////////////////////////////////////
+//1063 : 두 정수 입력받아 큰 수 출력하기 (if 대신 ? 사용)
+/*
+#include <stdio.h>
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("%d", a>b? a:b);
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+//1064 : 정수 3개 입력받아 가장 작은 수 출력하기 (if 대신 ? 사용)
+/*
+#include <stdio.h>
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d", (a<b ? a:b)<c ? (a<b ? a:b):c);
+}
+*/
+// 1번 오류 이유 : 가장 "작은" 수
+
+////////////////////////////////////////////////////////////////////////////
+//1065 : 정수 3개 입력받아 짝수만 출력하기
+/*
+#include <stdio.h>
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    if(a%2==0)
+    {
+        printf("%d\n", a);
+    }
+    if(b%2==0)
+    {
+        printf("%d\n", b);
+    }
+    if(c%2==0)
+    {
+        printf("%d\n", c);
+    }
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+//1066 : 정수 3개 입력받아 짝/홀 출력하기
+/*
+#include <stdio.h>
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    if(a%2==0)
+    {
+        printf("%s\n", "even");
+    }
+    else printf("%s\n", "odd");
+    
+    if(b%2==0)
+    {
+        printf("%s\n", "even");
+    }
+    else printf("%s\n", "odd");
+    
+    if(c%2==0)
+    {
+        printf("%s\n", "even");
+    }
+    else printf("%s\n", "odd");
+
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+//1067 : 정수 1개 입력받아 분석하기
+
+/*
+#include <stdio.h>
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    if(a>0)
+    {
+        printf("%s", "plus\n");
+        if(a%2==0) printf("%s", "even");
+        else printf("%s", "odd");
+    }
+    else if(a<0)
+    {
+        printf("%s", "minus\n");
+        if(a%2==0) printf("%s", "even");
+        else printf("%s", "odd");
+    }
+    
+
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+//1068 : 정수 1개 입력받아 평가 출력하기
+/*
+#include <stdio.h>
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    if(a>89)
+    {
+        printf("%s","A");
+    }
+    else if(a>69)
+    {
+        printf("%s","B");
+    }
+    else if(a>39)
+    {
+        printf("%s","C");
+    }
+    else printf("%s","D");
+
+    return 0;
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+//1069 : 평가 입력받아 다르게 출력하기
+
+/*
+#include <stdio.h>
+int main()
+{
+    char a;
+    scanf("%c", &a);
+    if(a=='A') printf("best!!!");
+    else if(a=='B') printf("good!!");
+    else if(a=='C') printf("run!");
+    else if(a=='D') printf("slowly~");
+    else printf("what?");
+    
+    return 0;
+}
+*/
+//또는
+/*
+#include <stdio.h>
+int main()
+{
+    char a;
+    scanf("%c", &a);
+
+    switch(a)
+    {
+        case 'A':printf("best!!!");
+        break;
+        case 'B': printf("good!!");
+        break;
+        case 'C':printf("run!");
+        break;
+        case 'D':printf("slowly~");
+        break;
+        default: printf("what?");
+    }
+    return 0;
+}
+*/
+// 틀린 이유 : 문자는 ' ' 작은 따옴표
+
+////////////////////////////////////////////////////////////////////////////
+//1070 : 월 입력받아 계절 출력하기
+
+/*
+#include <stdio.h>
+int main()
+{
+    int a;
+    scanf("%d", &a);
+
+    switch(a)
+    {
+        case 1:
+        case 2: printf("winter");
+        break;
+        case 3:
+        case 4:
+        case 5: printf("spring");
+        break;
+        case 6:
+        case 7:
+        case 8: printf("summer");
+        break;
+        case 9:
+        case 10:
+        case 11: printf("fall");
+        break;
+        case 12: printf("winter");
+        break;
+    }
+    
+    return 0;
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+1071 : 0 입력될 때까지 무한 출력하기1
+/*
+#include <stdio.h>
+int main()
+{
+    int a;
+    reload:
+    scanf("%d", &a);
+    if(a!=0)
+    {
+        printf("%d\n", a);
+        goto reload;
+    }
+   
+    return 0;
+}
+*/
+
+////////////////////////////////////////////////////////////////////////////
+1072 : 정수 입력받아 계속 출력하기
+
+/*
+#include <stdio.h>
+int main()
+{
+    int a, n;
+    scanf("%d", &a);
+    redo:
+    scanf("%d", &n);
+    printf("%d\n", n);
+    if(a--!=1) goto redo;
+    
+    return 0;
+}
+*/
+//또는
+/*
+#include <stdio.h>
+int main()
+{
+    int a, n;
+    scanf("%d", &a);
+    for(int i=0;i<a;i++)
+    {
+        scanf("%d", &n);
+        printf("%d\n", n);
+    }
+}
+*/
+////////////////////////////////////////////////////////////////////////////
+1073 : 0 입력될 때까지 무한 출력하기2
+
+/*
+#include <stdio.h>
+int main()
+{
+    int a=1;
+    while(a!=0)
+    {
+        scanf("%d", &a);
+        if(a!=0) printf("%d\n", a);
+    }
+    
+    return 0;
+}
+*/
+
+////////////////////////////////////////////////////////////////////////////
+1074 : 정수 1개 입력받아 카운트다운 출력하기1
+
+/*
+#include <stdio.h>
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    while(a!=0)
+    {
+    printf("%d\n", a);
+    a--;
+    }
+    
+    return 0;
+}
+*/
+
+////////////////////////////////////////////////////////////////////////////
+1075 : 정수 1개 입력받아 카운트다운 출력하기2
+
+/*
+#include <stdio.h>
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    while(a!=0)
+    {
+    a--;
+    printf("%d\n", a);
+    }
+    
+    return 0;
+}
+*/
+
+////////////////////////////////////////////////////////////////////////////
